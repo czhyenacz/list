@@ -1,0 +1,39 @@
+{block content}
+
+
+
+
+
+
+
+
+
+ <a  href="http://mysql.webdesignum.cz/ " style="float:right" target="_blank">|| Další úpravy DB</a><a  href="{link Rozhrani:master_1} " style="float:right">| Úprava tagů | </a><a  href="{link Rozhrani:master_spravauctu} " style="float:right">| Vypis účtů | </a><a  href="{link Rozhrani:master} " style="float:right">| Nahrát feed | </a><a  href="{link Rozhrani:out} " style="float:right">| Odhlásit se | </a>
+<h1>Nahrávání a manipulace s xml feedy</h1>
+
+
+{if count($load)}
+
+
+
+<a href="{link Rozhrani:master_1}">Jo vyšlo to, data by měla být v databázi s tagy "nic"</a>
+
+
+
+    {else}
+<center><h3>Nahrávání se nějak podělalo.</h3></center>
+
+<a href="{link Rozhrani:master}">Zkusit to znovu</a>
+<a href="{link Hledam:default}">Domů</a>
+
+  {/if}
+
+ 
+
+
+
+
+
+
+{/block}
+

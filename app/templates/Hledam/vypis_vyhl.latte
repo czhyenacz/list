@@ -1,0 +1,322 @@
+{block content}
+
+<head>
+   
+    
+
+  <script type="text/javascript">
+   
+$(window).scroll(function() {
+ 
+                         
+   
+   $('#zpatkynahorubutton').delay(2000).show(0);
+  
+});
+
+
+</script>
+
+    
+    <style>
+        .img-swap { cursor: pointer; }
+        #footer { display:none; }
+        .wrapper { position:relative; top:-200px; height:100%; }
+        #odkaz1{
+  
+ position: absolute;
+        top: 10px; 
+   
+}
+zaskrtavadla_skupina { width:1100px;
+
+
+
+
+}
+
+.pole_vysledku_darky
+{ 
+    width:860px; 
+  
+    z-index: 10;
+    border-style: solid;  border-width: 0px;
+     
+ position: relative; 
+        top: -200px; 
+            left: -100px; 
+}
+
+    </style>
+ 
+  <script type="text/javascript">
+
+
+
+jQuery(function(){
+     $(".img-swap").hover(
+     
+     
+      function(){ this.src = this.src.replace("_1","_2");  },
+          function(){ this.src = this.src.replace("_2","_1");}
+         
+      );
+});
+
+
+</script>
+
+
+
+    <script type="text/javascript">
+function ShowDiv()
+{
+document.getElementById("HiddenDiv").style.display = '';
+}
+function HidDiv()
+{
+document.getElementById("HiddenDiv").style.display = 'none';
+}
+</script>
+    
+</head>
+
+ 
+ <h2 style="position:absolute; left:390px; top:-60px;"> Seznam dárků pro {$vyraz} </h2>
+<div class="wrapper_vypis" >
+    
+
+    <img src="images/vypis/navigace2.png" id="navigace1"   />
+
+
+<div class="filtr">
+
+
+<a name="zalozka"></a>
+<img src="images/vypis/filtr.png"  border="0">
+
+
+
+
+
+
+{form darekForm class => 'vyhl_zmena'}
+
+{input hledany_vyraz class => 'vyhl_pole_2'}
+{input cena_od class => 'vyhl_pole_3'}
+{input cena_do class => 'vyhl_pole_4'}
+<pomlcka id="pomlcka"> - </pomlcka>
+<cena_label id="cena_label"> Cena </cena_label>
+<osoba_label id="osoba"> Osobu lze měnit </osoba_label>
+
+
+        
+
+
+
+
+            {input send  id => 'tlacitko_dohledej' , class => 'img-swap' }
+
+<div class="zaskrtavadla_skupina">
+ {if ($jidlo)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/jidlo3.png" id="zaskrt" title="Jídlo & Vaření" />{input jidlo class => 'zaskrtavadlaa' } </label></div>
+ {else}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/jidlo_1.png"  id="zaskrt" class="img-swap"  />{input jidlo class => 'zaskrtavadlaa' } </label></div>
+    {/if}
+
+
+
+ {if ($priroda)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/priroda3.png" id="zaskrt" title="Příroda" />{input priroda class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/priroda_1.png"  id="zaskrt" class="img-swap" />{input priroda class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+
+{if ($umeni)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/umeni3.png"  id="zaskrt" title="Umění & design"  />{input umeni class => 'zaskrtavadlaa' } </label></div>
+  {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/umeni_1.png" id="zaskrt" class="img-swap"   />{input umeni class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+{if ($hry)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/hry3.png"  id="zaskrt" title="Hry & hračky"  />{input hry class => 'zaskrtavadlaa' } </label></div>
+  {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/hry_1.png"  id="zaskrt" class="img-swap" />{input hry class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+{if ($gadgets)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/gadgets3.png"  id="zaskrt" title="Gadgets"  />{input gadgets class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/gadgets_1.png" id="zaskrt" class="img-swap"  />{input gadgets class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+{if ($zvirata)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/zvirata3.png"  id="zaskrt" title="Zvířata"  />{input zvirata class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/zvirata_1.png" id="zaskrt" class="img-swap"  />{input zvirata class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+{if ($film)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/film3.png"  id="zaskrt" title="Film"  />{input film class => 'zaskrtavadlaa' } </label> </div>
+  {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/film_1.png" id="zaskrt" class="img-swap"  />{input film class => 'zaskrtavadlaa' } </label> </div>
+
+{/if}
+{if ($hudba)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/hudba3.png" id="zaskrt" title="Hudba"   />{input hudba class => 'zaskrtavadlaa' } </label></div>
+  {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/hudba_1.png"  id="zaskrt" class="img-swap" />{input hudba class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+
+{if ($relax)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/relax3.png"  id="zaskrt" title="Relax"  />{input relax class => 'zaskrtavadlaa' } </label></div>
+  {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/relax_1.png" id="zaskrt" class="img-swap"  />{input relax class => 'zaskrtavadlaa' } </label></div>
+
+{/if} 
+{if ($technologie)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/technologie3.png"  id="zaskrt" title="Technologie"  />{input technologie class => 'zaskrtavadlaa' } </label></div>
+  {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/technologie_1.png" id="zaskrt" class="img-swap"  />{input technologie class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+  
+ 
+{if ($sport)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/sport3.png"  id="zaskrt" title="Sport"  />{input sport class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/sport_1.png"  id="zaskrt" class="img-swap"  />{input sport class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+ {if ($nocni_zivot)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/nocnizivot3.png"  id="zaskrt" title="Noční život"  />{input nocni_zivot class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/nocnizivot_1.png"  id="zaskrt" class="img-swap" />{input nocni_zivot class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+{if ($moda)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/moda3.png"  id="zaskrt" title="Móda"  />{input moda class => 'zaskrtavadlaa' } </label> </div>
+  {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/moda_1.png" id="zaskrt" class="img-swap"  />{input moda class => 'zaskrtavadlaa' } </label> </div>
+
+{/if}
+{if ($dobrodruzstvi)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/dobrodruzstvi3.png"  id="zaskrt" title="Dobrodružství"  />{input dobrodruzstvi class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/dobrodruzstvi_1.png"  id="zaskrt" class="img-swap" />{input dobrodruzstvi class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+
+{if ($retro)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/retro3.png"  id="zaskrt" title="Retro"  />{input retro class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/retro_1.png"  id="zaskrt" class="img-swap" />{input retro class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+
+ {if ($historie)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/historie3.png"  id="zaskrt" title="Historie"  />{input historie class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/historie_1.png"  id="zaskrt" class="img-swap" />{input historie class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+
+ {if ($hobby)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/rucniprace3.png"  id="zaskrt" title="Hobby (ruční práce)"  />{input hobby class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/rucniprace_1.png"  id="zaskrt" class="img-swap" />{input hobby class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+ 
+{if ($tabak)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/tabak3.png"  id="zaskrt" title="Tabák"  />{input tabak class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/tabak_1.png"  id="zaskrt" class="img-swap" />{input tabak class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+ 
+{if ($zdravi)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/zdravi3.png"  id="zaskrt" title="Zdraví"  />{input zdravi class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/zdravi_1.png"  id="zaskrt" class="img-swap" />{input zdravi class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+ 
+{if ($ezoterika)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/ezoterika3.png"  id="zaskrt" title="Ezoterika"  />{input ezoterika class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/ezoterika_1.png"  id="zaskrt" class="img-swap" />{input ezoterika class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+ 
+{if ($outdoor)=="TRUE"}
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/outdoor3.png"  id="zaskrt" title="Outdoor"  />{input outdoor class => 'zaskrtavadlaa' } </label></div>
+ {else} <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/outdoor_1.png"  id="zaskrt" class="img-swap" />{input outdoor class => 'zaskrtavadlaa' } </label></div>
+
+{/if}
+
+    </div>
+{/form}
+
+
+</div>
+
+  <ul class="pole_vysledku_darky" style=" left:-100px ; top:-200px; width:1000px; "> 
+ {if count($darkys)} 
+   <li class="darky"  style="float:left;position:relative; left:40px;" >
+    
+       <br/><br/>
+                     <h3 style="font-size: 120%;">Dotazu odpovídá </h3>
+<h2 style="position:relative; font-size: 200%; color:black;">{$count} </h2>
+      <h3 style="position:relative; font-size: 120%;">dárků </h3>
+        </li>
+        
+         {else}
+<div id="nomoreresults"  >
+   <li class="darky"  style="float:left;" >
+           <br/>
+         <img class="darky_img" src="images/vypis/meda_1.png"  border="0" ><br/><br/><br/>
+             <h3 style="position:relative; top:-40px;">Nejsou vybrány žádné zájmy.</h3>
+        </li>
+
+    </div>
+ {/if}
+ <div id="list">
+
+    {if count($darkys)}
+   
+        {foreach $darkys as $darky} 
+ <a href="{link detail $darky['nazev_pekny']}" > <li class="darky" >
+        <h3 id="darky_nazev" style="font-size: 130%;">{$darky['nazev']|truncate:39}</h3>
+        <img class="darky_img" src="{$darky['obrazek_produktu']}" onerror="this.src='../images/vypis/neni_obrazek.png'" border="0">
+     <br/>  <br/>   <div id="cenavypis"><cena> {$darky['cena']|number} Kč</cena></div>
+  
+    </li>  </a> 
+        {/foreach}
+ 
+ {else}
+      
+    {/if}
+ 
+      
+ </div>
+        
+        
+        
+   
+    </ul> 
+
+   <!--   
+<div id="podpora">
+     <a  href="javascript:ShowDiv()">  <img src="images/feedback.png" alt="Feedback" /></a>
+ 
+</div>
+    
+  <div id="HiddenDiv" style="display:none; position:fixed; border-style:solid; top:100px; right:0px; width:810px;height:520px; z-index:90; background-color:white; border-width:3px;" >
+
+ <h2>Trápí Vás něco? Svěřte se adminovi</h2>. <a  href="javascript:HidDiv()" style="float:right;">  Zavřít okno [x]</a>
+<iframe src="http://www.najduse.php5.cz/okno" width="800" height="410" id="ram_okno" >
+</iframe>
+
+</div>
+
+ -->
+
+ <div id="slideout">
+  <img src="images/feedback.png" alt="Feedback" />
+  <div id="slideout_inner">
+   
+<iframe src="http://www.najduse.php5.cz/okno" width="500" height="300" style="border-style: solid;  border-width: 0px;">
+</iframe>
+</div>
+  </div>
+
+
+</div>
+<a href="#zalozka"><img src="images/vypis/zpatkynahorubutton.png"  id="zpatkynahorubutton"/></a>
+
+
+{/block}

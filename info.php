@@ -1,0 +1,1 @@
+<? echo phpinfo(-1); ?>

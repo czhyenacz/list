@@ -1,0 +1,50 @@
+{block content}
+
+<head>
+    <style>
+
+.wrapper{ height:978px; }
+</style>
+</head>
+
+    
+       <a  href="{link Rozhrani:menu} " style="float:right">| Úvod | </a>  <a  href="{link Rozhrani:klient_detail} " style="float:right">| Správa účtu | </a><a  href="{link Rozhrani:klient_ucet} " style="float:right">| Správa kampaně | </a><a  href="{link Rozhrani:out} " style="float:right">| Odhlásit se | </a>
+
+
+{if count($hodnot)}
+      
+   <h1>Nahrání nových údajů proběhlo úspěšne</h1>
+ 
+       
+<hr/>
+
+  
+  <hr/> 
+
+          <a href="{link Hledam:default}">Domů</a>
+       
+
+
+
+
+
+
+ {else}
+    <center><h3>Nahrání nových hodnot neproběhlo úspěšne.</h3></center>
+       
+         <a href="{link Rozhrani:klient_detail}">Zpátky na detail o uctu</a><br/><br/>
+          <a href="{link Hledam:default}">Domů</a>
+         
+         
+    {/if}
+
+
+
+
+
+
+
+
+
+{/block}
+

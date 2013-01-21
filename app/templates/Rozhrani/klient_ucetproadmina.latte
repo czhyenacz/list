@@ -1,0 +1,46 @@
+{block content}
+
+<head>
+    
+    
+    <style>
+
+.wrapper{  }
+</style>
+</head>
+
+    
+      <a  href="{link Rozhrani:menu} " style="float:right">| Úvod | </a> <a  href="{link Rozhrani:klient_detail} " style="float:right">| Správa účtu | </a><a  href="{link Rozhrani:klient_ucet} " style="float:right">| Správa kampaně | </a><a  href="{link Rozhrani:out} " style="float:right">| Odhlásit se | </a>
+    
+    <h1>Správa kampaně - admin</h1> 
+  
+  
+   <table id="one-column-emphasis" summary="Správa kampaně">
+  
+
+    	
+       
+       <tr>
+        	            
+            <td style="color:red">Celková suma přístupů</td>
+            <td></td>
+            <td style="color:red"> <h2> {$kliky}</h2></td>
+        </tr>
+            
+   
+</table>
+  
+  {control adminklient_darkyGrid $mail}
+
+
+
+
+    
+
+
+
+
+
+
+{/block}
+

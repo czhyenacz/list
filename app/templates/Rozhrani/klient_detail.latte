@@ -1,0 +1,96 @@
+{block content}
+
+<head>
+    <style>
+
+.wrapper{  }
+</style>
+</head>
+
+      <a  href="{link Rozhrani:menu} " style="float:right">| Úvod | </a> <a  href="{link Rozhrani:klient_detail} " style="float:right">| Správa účtu | </a><a  href="{link Rozhrani:klient_ucet} " style="float:right">| Správa kampaně | </a><a  href="{link Rozhrani:out} " style="float:right">| Odhlásit se | </a>
+
+<h1 >Správa účtu</h1>
+<hr/>
+
+         
+{if count($hodnot)}
+        {foreach $hodnot as $hodnotyi}
+       
+    
+     <table id="one-column-emphasis" summary="Správa účtu">
+    <colgroup>
+    	<col class="oce-first" />
+    </colgroup>
+    <thead>
+    	<tr>
+        	<th scope="col"><h2>Položka</h2></th>
+            <th scope="col"><h2>Hodnota</h2></th>
+           
+        </tr>
+    </thead>
+    <tbody>
+    	 <tr>
+        	<td>Login/Kontaktní e-mail</td>
+                
+            <td>{$hodnotyi['kontaktmail']}</td>
+         
+        </tr>
+        <tr>
+        	<td>Heslo</td>
+            <td>{$hodnotyi['password']}</td>
+          
+        </tr>
+         <tr>
+        	<td>Kontakt telefon</td>
+                
+            <td>{$hodnotyi['kontakttel']}</td>
+         
+        </tr>
+        
+        <tr>
+        	<td>Status</td>
+            <td>{$hodnotyi['role']}</td>
+         
+        </tr>
+       
+         <tr>
+        	<td>Odkaz na  xml</td>
+            <td>{$hodnotyi['odkaz_xml']}</td>
+           
+        </tr>
+        <tr>
+        	<td>Adresa serveru</td>
+            <td>{$hodnotyi['adresa']}</td>
+      
+        </tr>
+         
+         <tr>
+        	<td>Ostatní informace/vzkaz adminům</td>
+            <td width="200px"><p style="text-align: justify; width:100px;">{$hodnotyi['info']}</td></p>
+            
+        </tr>
+    </tbody>
+</table>
+      
+ 
+        {/foreach}
+
+  <hr/> <h2>Změna  údajů</h2>
+{control klient_update_form}
+
+ {else}
+    <center><h3>Nebyly nalezeny záznamy.</h3></center>
+       
+         <a href="{link Rozhrani:prihlaseni}">Zkusit se přihlásit znovu</a><br/><br/>
+          <a href="{link Hledam:default}">Domů</a>
+     
+    {/if}
+
+
+
+
+
+
+
+{/block}
+

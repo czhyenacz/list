@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('Oswald-Regular-webfont.eot');
+    src: url('Oswald-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Oswald-Regular-webfont.woff') format('woff'),
+         url('Oswald-Regular-webfont.ttf') format('truetype'),
+         url('Oswald-Regular-webfont.svg#Oswald') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'subpearregular';
+    src: url('ufonts.com_subpear1-webfont.eot');
+    src: url('ufonts.com_subpear1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ufonts.com_subpear1-webfont.woff') format('woff'),
+         url('ufonts.com_subpear1-webfont.ttf') format('truetype'),
+         url('ufonts.com_subpear1-webfont.svg#subpearregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceSansProLight';
+    src: url('SourceSansPro-Light-webfont.eot');
+    src: url('SourceSansPro-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('SourceSansPro-Light-webfont.woff') format('woff'),
+         url('SourceSansPro-Light-webfont.ttf') format('truetype'),
+         url('SourceSansPro-Light-webfont.svg#SourceSansProLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'RopaSansRegular';
+    src: url('RopaSans-Regular-webfont.eot');
+    src: url('RopaSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('RopaSans-Regular-webfont.woff') format('woff'),
+         url('RopaSans-Regular-webfont.ttf') format('truetype'),
+         url('RopaSans-Regular-webfont.svg#RopaSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'shantiregular';
+    src: url('shanti-regular-webfont.eot');
+    src: url('shanti-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('shanti-regular-webfont.woff') format('woff'),
+         url('shanti-regular-webfont.ttf') format('truetype'),
+         url('shanti-regular-webfont.svg#shantiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SourceSansProRegular';
+    src: url('SourceSansPro-Regular-webfont.eot');
+    src: url('SourceSansPro-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('SourceSansPro-Regular-webfont.woff') format('woff'),
+         url('SourceSansPro-Regular-webfont.ttf') format('truetype'),
+         url('SourceSansPro-Regular-webfont.svg#SourceSansProRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

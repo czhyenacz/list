@@ -1,0 +1,39 @@
+{block content}
+
+    <head><script type="text/javascript" src="{$basePath}/js/jquery.nette.js"></script></head>  
+ 
+ <h1>test ajaxu.</h1>
+
+
+<br/><br/><br/>
+
+
+<a n:href="changeTest!" class="ajax" >change</a>
+<br/>
+
+{snippet pokus}
+{$hodnota}
+{/snippet}
+
+
+
+<script>
+ $(function(){
+    $('a.ajax').live('click', function(){
+        
+        
+        $.get(this.href);
+        
+        
+        
+        return false;
+        
+        
+        
+    });
+    
+    });
+
+
+</script>
+ {/block}

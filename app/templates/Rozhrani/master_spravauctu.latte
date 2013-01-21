@@ -1,0 +1,117 @@
+{block content}
+
+<style>
+
+.wrapper{ height:978px; }
+
+       
+        #footer { display:none; }
+         </style>
+
+{foreach $hodnot as $hodnotyi}
+      {if $hodnotyi['role']=="admin"}
+
+
+
+
+<head>
+</head>
+<div id="wrapper">
+   {if count($ucty)}
+<a  href="http://mysql.webdesignum.cz/ " style="float:right" target="_blank">|| Další úpravy DB</a> <a  href="{link Rozhrani:master_1} " style="float:right">| Úprava tagů | </a><a  href="{link Rozhrani:master_spravauctu} " style="float:right">| Vypis účtů | </a><a  href="{link Rozhrani:master} " style="float:right">| Nahrát feed | </a><a  href="{link Rozhrani:out} " style="float:right">| Odhlásit se | </a>
+    <h2>výpis nových účtů </h2>
+    {foreach $ucty as $ucti}
+    <table>
+     
+<tr><td>IČO </td><td>{$ucti['ic']}</td></tr>
+<tr><td>xmlfeed </td><td>{$ucti['odkaz_xml']}</td></tr>
+<tr><td>adresa</td><td>{$ucti['adresa']}</td></tr>
+<tr><td>mail </td><td>{$ucti['kontaktmail']}</td></tr>
+{if $ucti['status']=="stop"}
+<tr><td>stav </td><td style="color:red">STOP</td></tr>
+{else}
+<tr><td>stav </td><td style="color:green">OK</td></tr>
+{/if}
+<tr><td></td><td><a  href="{link Rozhrani:klient_detailproadmina $ucti['kontaktmail'] } " >Profil</a></td></tr>
+<tr><td></td><td><a  href="{link Rozhrani:klient_ucetproadmina $ucti['kontaktmail'] } " >Výpis kliků</a></td></tr>
+<tr><td></td><td><a  href="{link Rozhrani:spravauctu $ucti['id'], "start" } " >Znovuzapnutí účtu</a></td></tr>
+<tr><td></td><td><a  href="{link Rozhrani:spravauctu $ucti['id'], "stop" } " >Pozastavení účtu</a></td></tr>
+<tr><td><br/></td><td></td></tr> 
+<tr><td></td><td><a  href="{link Rozhrani:spravauctu $ucti['id'], "delete" } " >Smazat všechny produkty</a></td></tr>  
+    <tr><td></td><td><a  href="{link Rozhrani:spravauctu $ucti['id'], "format" }  " >Smazání účtu</a></td></tr>
+    </table>   
+<hr/>
+    
+       {/foreach}
+    <hr/>
+   
+   
+
+
+   {else}
+<center><h3>Už není koho spravovat - dyštak musíš do klasické správy databáze.</h3></center>
+{/if}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+{else}
+<center><h3>Uživatel nebo heslo nesouhlasí- zapni si kookiny, nebo se znovu přihlaš.</h3></center>
+      {/if}
+        {/foreach}
+
+
+
+</table>
+
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+{/block}
+

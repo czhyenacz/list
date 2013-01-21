@@ -1,0 +1,17 @@
+<?php global $SMTheme;get_header();$s=get_the_category(); ?>
+<div id='content'><div class='container clearfix'>
+	
+		<?php get_sidebar(); ?>    
+		<div class="main_content">
+			<h2 class="page-title"><?php printf( $SMTheme->_( 'tagarchive' ), single_tag_title( '', false ) ); ?></h2>
+			
+			<?php get_template_part('theloop'); ?>
+            
+			<?php get_template_part('navigation'); ?>
+			
+        </div><!-- #content -->
+    
+        
+                
+</div></div>
+    <?php get_footer(); ?>

@@ -1,0 +1,114 @@
+{block content}
+
+<head>
+</head>
+<div id="wrapper">
+{foreach $hodnot as $hodnotyi}
+      {if $hodnotyi['role']=="admin"}
+
+
+
+
+<head>
+</head>
+<div id="wrapper">
+   {if count($ucty)}
+    <a  href="{link Rozhrani:out} " style="float:right">Odhlásit se</a>
+    <h2>výpis nových účtů </h2>
+    {foreach $ucty as $ucti}
+    <table>
+     
+ <tr><td>ID </td> <td>{$ucti['id']}</td> </tr>
+<tr><td>xmlfeed </td><td>{$ucti['odkaz_xml']}</td></tr>
+<tr><td>heslo</td><td>{$ucti['password']}</td></tr>
+<tr><td>adresa</td><td>{$ucti['adresa']}</td></tr>
+<tr><td>info </td><td>{$ucti['info']}</td></tr>
+<tr><td>telefon </td><td>{$ucti['kontakttel']}</td></tr>
+<tr><td>mail </td><td>{$ucti['kontaktmail']}</td></tr>
+{if $ucti['status']=="stop"}
+<tr><td>stav </td><td style="color:red">STOP</td></tr>
+{else}
+<tr><td>stav </td><td style="color:green">OK</td></tr>
+{/if}
+<tr><td></td><td><a  href="{link Rozhrani:klient_detailproadmina $ucti['kontaktmail'],$ucti['password']  } " target="_blank">Odkaz na profil</a></td></tr>
+</table>   
+<hr/>
+    
+       {/foreach}
+    <hr/>
+    {control spravauctForm}
+   
+
+
+   {else}
+<center><h3>Už není koho spravovat - dyštak musíš do klasické správy databáze.</h3></center>
+{/if}
+    
+
+   </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+{else}
+<center><h3>Uživatel nebo heslo nesouhlasí- zapni si kookiny, nebo se znovu přihlaš.</h3></center>
+      {/if}
+        {/foreach}
+
+
+
+</table>
+
+</div> 
+
+
+
+
+
+
+
+
+
+
+<div id="footer_prihl">
+    <img src="images/uvod/footer.png" id="footer_uvod" /> 
+    <a  href="{link Rozhrani:prihlaseni} " id="text_footer_obchod">Přidat obchod</a>
+    <a  href="{link Rozhrani:kontakt} " id="text_footer_kontakt">Kontakt</a>
+    <a  href="{link Rozhrani:podminky} " id="text_footer_podminky">Smluvní podmínky</a>
+</div> 
+{/block}
+

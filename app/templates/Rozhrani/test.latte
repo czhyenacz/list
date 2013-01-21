@@ -1,0 +1,308 @@
+{block content}
+
+    <head><script type="text/javascript" src="{$basePath}/js/jquery.nette.js"></script></head>  
+ <script type="text/javascript" src="{$basePath}/js/jquery.ajaxform.js"></script>
+<head>
+   
+    
+
+  <script type="text/javascript">
+   
+$(window).scroll(function() {
+ 
+                         
+   
+   $('#zpatkynahorubutton').delay(2000).show(0);
+  
+});
+
+
+</script>
+
+    
+    <style>
+        .img-swap { cursor: pointer; }
+        #footer { display:none; }
+        .wrapper { position:relative; top:-200px; height:100%; }
+        #odkaz1{
+  
+ position: absolute;
+        top: 10px; 
+   
+}
+zaskrtavadla_skupina { width:1100px;
+
+
+
+
+}
+
+.pole_vysledku_darky
+{ 
+    width:860px; 
+  
+    z-index: 10;
+    border-style: solid;  border-width: 0px;
+     
+ position: relative; 
+        top: -200px; 
+            left: -100px; 
+}
+
+    </style>
+ 
+  <script type="text/javascript">
+
+
+
+jQuery(function(){
+     $(".img-swap").hover(
+     
+     
+      function(){ this.src = this.src.replace("_1","_2");  },
+          function(){ this.src = this.src.replace("_2","_1");}
+         
+      );
+});
+
+
+</script>
+
+
+
+    <script type="text/javascript">
+function ShowDiv()
+{
+document.getElementById("HiddenDiv").style.display = '';
+}
+function HidDiv()
+{
+document.getElementById("HiddenDiv").style.display = 'none';
+}
+</script>
+    
+</head>
+
+ 
+ <h2 style="position:absolute; left:390px; top:-60px;"> Seznam dárků pro {$vyraz} </h2>
+<div class="wrapper_vypis" >
+    
+
+    <img src="images/vypis/navigace2.png" id="navigace1"   />
+
+
+<div class="filtr">
+
+
+<a name="zalozka"></a>
+<img src="images/vypis/filtr.png"  border="0">
+
+
+
+
+
+
+{form testaForm class => 'vyhl_zmena'}
+
+{input hodnota class => 'vyhl_pole_2'}
+{input cena_od class => 'vyhl_pole_3'}
+{input cena_do class => 'vyhl_pole_4'}
+<pomlcka id="pomlcka"> - </pomlcka>
+<cena_label id="cena_label"> Cena </cena_label>
+<osoba_label id="osoba"> Osobu lze měnit </osoba_label>
+
+
+        
+
+
+
+
+            {input send  id => 'tlacitko_dohledej' }
+
+<div class="zaskrtavadla_skupina">
+
+        <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/jidlo_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('jidlo').checked){ this.src='images/vypis/jidlo_1.png'; } else { this.src='images/vypis/jidlo3.png'; } "
+  />
+{input jidlo class => 'zaskrtavadlaa', id => 'jidlo' } </label></div>
+    
+
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/priroda_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('priroda').checked){ this.src='images/vypis/priroda_1.png'; } else { this.src='images/vypis/priroda3.png'; } " />{input priroda class => 'zaskrtavadlaa' ,id => 'priroda' } </label></div>
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/umeni_1.png" id="zaskrt" class="img-swap" onclick="if (document.getElementById('umeni').checked){ this.src='images/vypis/umeni_1.png'; } else { this.src='images/vypis/umeni3.png'; } "  />{input umeni class => 'zaskrtavadlaa'  ,id => 'umeni' } </label></div>
+
+
+  <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/hry_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('hry').checked){ this.src='images/vypis/hry_1.png'; } else { this.src='images/vypis/hry3.png'; } " />{input hry class => 'zaskrtavadlaa' ,id => 'hry' } </label></div>
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/gadgets_1.png" id="zaskrt" class="img-swap" onclick="if (document.getElementById('gadgets').checked){ this.src='images/vypis/gadgets_1.png'; } else { this.src='images/vypis/gadgets3.png'; } "  />{input gadgets class => 'zaskrtavadlaa' ,id => 'gadgets' } </label></div>
+
+<div class="zaskrtavadla_vyp"> <label><img src="images/vypis/zvirata_1.png" id="zaskrt" class="img-swap" onclick="if (document.getElementById('zvirata').checked){ this.src='images/vypis/zvirata_1.png'; } else { this.src='images/vypis/zvirata3.png'; } "  />{input zvirata class => 'zaskrtavadlaa' ,id => 'zvirata' } </label></div>
+
+
+<div class="zaskrtavadla_vyp"> <label><img src="images/vypis/film_1.png" id="zaskrt" class="img-swap" onclick="if (document.getElementById('film').checked){ this.src='images/vypis/film_1.png'; } else { this.src='images/vypis/film3.png'; } " />{input film class => 'zaskrtavadlaa' ,id => 'film' } </label> </div>
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/hudba_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('hudba').checked){ this.src='images/vypis/hudba_1.png'; } else { this.src='images/vypis/hudba3.png'; } " />{input hudba class => 'zaskrtavadlaa' ,id => 'hudba' } </label></div>
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/relax_1.png" id="zaskrt" class="img-swap" onclick="if (document.getElementById('relax').checked){ this.src='images/vypis/relax_1.png'; } else { this.src='images/vypis/relax3.png'; } " />{input relax class => 'zaskrtavadlaa' ,id => 'relax' } </label></div>
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/technologie_1.png" id="zaskrt" class="img-swap" onclick="if (document.getElementById('technologie').checked){ this.src='images/vypis/technologie_1.png'; } else { this.src='images/vypis/technologie3.png'; } "  />{input technologie class => 'zaskrtavadlaa' ,id => 'technologie' } </label></div>
+
+
+  
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/sport_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('sport').checked){ this.src='images/vypis/sport_1.png'; } else { this.src='images/vypis/sport3.png'; } " />{input sport class => 'zaskrtavadlaa' ,id => 'sport' } </label></div>
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/nocnizivot_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('nocnizivot').checked){ this.src='images/vypis/nocnizivot_1.png'; } else { this.src='images/vypis/nocnizivot3.png'; } " />{input nocni_zivot class => 'zaskrtavadlaa' ,id => 'nocnizivot' } </label></div>
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/moda_1.png" id="zaskrt" class="img-swap" onclick="if (document.getElementById('moda').checked){ this.src='images/vypis/moda_1.png'; } else { this.src='images/vypis/moda3.png'; } " />{input moda class => 'zaskrtavadlaa' ,id => 'moda' } </label> </div>
+
+
+<div class="zaskrtavadla_vyp"> <label><img src="images/vypis/dobrodruzstvi_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('dobrodruzstvi').checked){ this.src='images/vypis/dobrodruzstvi_1.png'; } else { this.src='images/vypis/dobrodruzstvi3.png'; } " />{input dobrodruzstvi class => 'zaskrtavadlaa' ,id => 'dobrodruzstvi' } </label></div>
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/retro_1.png"  id="zaskrt" class="img-swap"  onclick="if (document.getElementById('retro').checked){ this.src='images/vypis/retro_1.png'; } else { this.src='images/vypis/retro3.png'; } "/>{input retro class => 'zaskrtavadlaa' ,id => 'retro' } </label></div>
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/historie_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('historie').checked){ this.src='images/vypis/historie_1.png'; } else { this.src='images/vypis/historie3.png'; } " />{input historie class => 'zaskrtavadlaa' ,id => 'historie' } </label></div>
+
+
+<div class="zaskrtavadla_vyp"> <label><img src="images/vypis/rucniprace_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('rucniprace').checked){ this.src='images/vypis/rucniprace_1.png'; } else { this.src='images/vypis/rucniprace3.png'; } " />{input hobby class => 'zaskrtavadlaa' ,id => 'rucniprace' } </label></div>
+
+
+ 
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/tabak_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('tabak').checked){ this.src='images/vypis/tabak_1.png'; } else { this.src='images/vypis/tabak3.png'; } " />{input tabak class => 'zaskrtavadlaa' ,id => 'tabak' } </label></div>
+
+
+ 
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/zdravi_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('zdravi').checked){ this.src='images/vypis/zdravi_1.png'; } else { this.src='images/vypis/zdravi3.png'; } " />{input zdravi class => 'zaskrtavadlaa' ,id => 'zdravi'} </label></div>
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/ezoterika_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('ezoterika').checked){ this.src='images/vypis/ezoterika_1.png'; } else { this.src='images/vypis/ezoterika3.png'; } " />{input ezoterika class => 'zaskrtavadlaa' ,id => 'ezoterika' } </label></div>
+
+
+ <div class="zaskrtavadla_vyp"> <label><img src="images/vypis/outdoor_1.png"  id="zaskrt" class="img-swap" onclick="if (document.getElementById('outdoor').checked){ this.src='images/vypis/outdoor_1.png'; } else { this.src='images/vypis/outdoor3.png'; } " />{input outdoor class => 'zaskrtavadlaa' ,id => 'outdoor' } </label></div>
+
+
+
+    </div>
+{/form}
+
+
+</div>
+
+
+
+
+{snippet pokus}
+
+ <ul class="pole_vysledku_darky" style=" left:-110px ; top:-150px; width:1000px; "> 
+ {if count($darkys)} 
+   <li class="darky"  style="float:left;position:relative; left:30px;" >
+    
+       <br/><br/>
+                     <h3 style="font-size: 120%;">Dotazu odpovídá </h3>
+<h2 style="position:relative; font-size: 200%; color:black;"> </h2>
+      <h3 style="position:relative; font-size: 120%;">dárků </h3>
+        </li>
+        
+         {else}
+<div id="nomoreresults"  >
+   <li class="darky"  style="float:left;" >
+           <br/>
+         <img class="darky_img" src="images/vypis/meda_1.png"  border="0" ><br/><br/><br/>
+             <h3 style="position:relative; top:-40px;">Nejsou vybrány žádné zájmy.</h3>
+        </li>
+
+    </div>
+ {/if}
+ <div id="list">
+
+    {if count($darkys)}
+   
+        {foreach $darkys as $darky} 
+ <a href="{link detail $darky['nazev_pekny']}" > <li class="darky" >
+        <h3 id="darky_nazev" style="font-size: 130%;">{$darky['nazev']|truncate:39}</h3>
+        <img class="darky_img" src="{$darky['obrazek_produktu']}" onerror="this.src='../images/vypis/neni_obrazek.png'" border="0">
+     <br/>  <br/>   <div id="cenavypis"><cena> {$darky['cena']|number} Kč</cena></div>
+  
+    </li>  </a> 
+        {/foreach}
+ 
+ {else}
+      
+    {/if}
+ 
+      
+ </div>
+        
+        
+        
+   
+    </ul> 
+{/snippet}
+
+  <script type="text/javascript">
+function changeImage(a) {
+        document.getElementById("img").src=a;
+    }
+</script>
+    
+
+<script>
+$(function () {
+        // odeslání na formulářích
+        $("form").submit(function () {
+                $(this).ajaxSubmit();
+                return false;
+        });
+
+        // odeslání pomocí tlačítek
+        $("form :submit").click(function () {
+                $(this).ajaxSubmit();
+                return false;
+        });
+       
+    
+      $("input[type='checkbox']").click(function () {
+        
+               $("form").submit();
+          
+     
+          
+        });
+        
+        
+        
+    
+    
+    });
+        
+        
+
+</script>
+
+
+
+
+
+
+ <div id="slideout">
+  <img src="images/feedback.png" alt="Feedback" />
+  <div id="slideout_inner">
+   
+<iframe src="http://www.najduse.php5.cz/okno" width="500" height="300" style="border-style: solid;  border-width: 0px;">
+</iframe>
+</div>
+  </div>
+
+
+</div>
+<a href="#zalozka"><img src="images/vypis/zpatkynahorubutton.png"  id="zpatkynahorubutton"/></a>
+
+
+ {/block}

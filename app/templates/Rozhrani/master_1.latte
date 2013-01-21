@@ -1,0 +1,127 @@
+{block content}
+<head>
+    
+    <link href="{$basePath}/css/grid.css" media="screen,projection,tv" rel="stylesheet" type="text/css" media="all" />
+<link href="{$basePath}/css/jquery-ui/jquery-ui.css" media="screen,projection,tv" rel="stylesheet" type="text/css" media="all" />
+<link href="{$basePath}/css/example.css" media="screen,projection,tv" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript" src="{$basePath}/js/jquery.js"></script>
+        <script type="text/javascript" src="{$basePath}/js/jquery.datepicker.js"></script>
+        <script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
+	<script type="text/javascript" src="{$basePath}/js/grid.js"></script>
+    <style>
+html { overflow-x: auto;}
+
+#footer { display:none; }
+
+         </style>
+
+</head>
+
+
+{foreach $hodnot as $hodnotyi}
+      {if $hodnotyi['role']=="admin"}
+
+ <a  href="http://mysql.webdesignum.cz/ " style="float:right" target="_blank">|| Další úpravy DB</a><a  href="{link Rozhrani:master_1} " style="float:right">| Úprava tagů | </a><a  href="{link Rozhrani:master_spravauctu} " style="float:right">| Vypis účtů | </a><a  href="{link Rozhrani:master} " style="float:right">| Nahrát feed | </a><a  href="{link Rozhrani:out} " style="float:right">| Odhlásit se | </a>
+    
+    <h1>Nahrávání a manipulace s xml feedy</h1>
+
+{control tagovaniGrid}
+
+ <table id="one-column-emphasis" summary="Učet klienta" style="font-size:20px">
+    <colgroup>
+        <col  />
+    </colgroup>
+    <thead>
+        <tr >
+
+            <th  class="oce-first" style="font-size:12px"><h2>Id</h2></th>
+    <th  class="oce-first"><h2>Nazev</h2></th>
+    <th  class="oce-first"><h2>Cena</h2></th>
+    <th  class="oce-first"><h2>Jmeno_prodejce</h2></th>
+    <th  class="oce-first"><h2>Adresa</h2>
+
+</th> 
+<th  class="oce-first"><h2>Tag1</h2></th>
+<th  class="oce-first"><h2>Tag2</h2></th>
+<th  class="oce-first"><h2>Tag3</h2></th>
+<th  class="oce-first"><h2>Tag4</h2></th>
+<th  class="oce-first"><h2>Tag5</h2></th>
+<th  class="oce-first"><h2>Skupina</h2></th>
+<th  class="oce-first"><h2>Skupina II</h2></th>
+<th  class="oce-first"><h2>Skupina III</h2></th>
+<th  class="oce-first"><h2>Odeslat</h2></th>
+</tr>
+</thead>
+
+
+
+{if count($novy)}
+
+<tbody>
+
+
+
+
+
+
+
+
+    <tr>{form feedloadForm}
+
+        <td><h2>{$novy['id']}</h2></td>
+<td><a  href="{$novy['adresa']} "  target="_blank">{$novy['nazev']}</a></td>
+<td>{$novy['cena']}</td>
+<td>{$novy['jmeno_prodejce']}</td>
+<td>{$novy['adresa']}</td>
+<td>{input tag1 }</td>
+<td>{input tag2 }</td>
+<td>{input tag3 }</td>
+<td>{input tag4 }</td>
+<td>{input tag5 }</td>
+<td>{input skupina }</td>
+<td>{input skupina2 }</td>
+<td>{input skupina3 }</td>
+<td>{input send}</td>
+  {/form}</tr> 
+
+</tbody>
+    {else}
+<center><h3>Nejsou už žádné dárky k úpravě.</h3></center>
+    {/if}
+
+
+
+
+{else}
+<center><h3>Uživatel nebo heslo nesouhlasí- zapni si kookiny, nebo se znovu přihlaš.</h3></center>
+      {/if}
+        {/foreach}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/block}
+

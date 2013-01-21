@@ -1,0 +1,115 @@
+{block content}
+
+<head>
+</head>
+<div id="wrapper">
+{foreach $hodnot as $hodnotyi}
+      {if $hodnotyi['role']=="admin"}
+
+    <a href="{link Rozhrani:master}">Přejít z5 na stranu nahrávání a manipulace s xml feedy</a>
+    <h1>Nahrávání a manipulace s xml feedy</h1>
+
+
+
+<table id="one-column-emphasis" summary="Učet klienta">
+    <colgroup>
+        <col  />
+    </colgroup>
+    <thead>
+        <tr >
+
+            <th  class="oce-first"><h2>Id</h2></th>
+    <th  class="oce-first"><h2>Nazev</h2></th>
+    <th  class="oce-first"><h2>Cena</h2></th>
+    <th  class="oce-first"><h2>Jmeno_prodejce</h2></th>
+    <th  class="oce-first"><h2>Adresa</h2>
+
+</th> <th  class="oce-first"><h2>Popis</h2></th>
+
+<th  class="oce-first"><h2>Obrazek</h2></th>
+<th  class="oce-first"><h2>Kategorie</h2></th>
+<th  class="oce-first"><h2>Tag1</h2></th>
+<th  class="oce-first"><h2>Tag2</h2></th>
+<th  class="oce-first"><h2>Tag3</h2></th>
+<th  class="oce-first"><h2>Skupina</h2></th>
+<th  class="oce-first"><h2>Odeslat</h2></th>
+</tr>
+</thead>
+
+
+
+{if count($novy)}
+
+<tbody>
+
+
+
+
+
+
+
+
+    <tr>{form feedloadForm}
+
+        <td><h2>{$novy['id']}</h2></td>
+<td>{$novy['nazev']}</td>
+<td>{$novy['cena']}</td>
+<td>{$novy['jmeno_prodejce']}</td>
+<td>{$novy['adresa']}</td>
+
+<td>{$novy['popis_produktu']}</td>
+<td>{$novy['obrazek_produktu']}</td>
+<td>{$novy['kategorie']}</td>
+<td>{input tag1 }</td>
+<td>{input tag2 }</td>
+<td>{input tag3 }</td>
+<td>{input skupina }</td>
+<td>{input send}</td>
+  {/form}</tr> 
+
+</tbody>
+    {else}
+<center><h3>Nejsou už žádné dárky k úpravě.</h3></center>
+    {/if}
+
+
+
+
+{else}
+<center><h3>Uživatel nebo heslo nesouhlasí- zapni si kookiny, nebo se znovu přihlaš.</h3></center>
+      {/if}
+        {/foreach}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+</div> 
+
+
+
+
+
+
+
+
+
+
+<div id="footer_prihl">
+    <img src="images/uvod/footer.png" id="footer_uvod" /> 
+    <a  href="{link Rozhrani:prihlaseni} " id="text_footer_obchod">Přidat obchod</a>
+    <a  href="{link Rozhrani:kontakt} " id="text_footer_kontakt">Kontakt</a>
+    <a  href="{link Rozhrani:podminky} " id="text_footer_podminky">Smluvní podmínky</a>
+</div> 
+{/block}
+

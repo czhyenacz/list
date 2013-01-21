@@ -1,0 +1,56 @@
+{block content}
+
+
+<style>
+
+.wrapper{ height:978px; }
+</style>
+
+   
+{if count($hodnot)}
+
+
+  
+
+      {foreach $hodnot as $hodnotyi}
+      {if $hodnotyi['role']=="admin"}
+<h1>Vítej admine, tak jaký je tvůj den?!!</h1>
+<a href="{link Rozhrani:master}">Přejít na stranu nahrávání a manipulace s xml feedy</a><br/>
+<a href="{link Rozhrani:master_spravauctu}">Přejít na stranu práce s profily zákazníků</a>
+      {else}
+ <a  href="{link Rozhrani:menu} " style="float:right">| Úvod | </a> <a  href="{link Rozhrani:klient_detail} " style="float:right">| Správa účtu | </a><a  href="{link Rozhrani:klient_ucet} " style="float:right">| Správa kampaně | </a><a  href="{link Rozhrani:out} " style="float:right">| Odhlásit se | </a>
+
+ <h1>Vítej kliente !</h1>
+<hr/>
+ <span><p>V jednoduchosti je krása a tak můžete udělat jen dvě věci:<br/>
+
+<br/>1) Spravovat svůj účet 
+<br/>2) Spravovat prokliky/přístupy na stránky<br/><br/>
+
+Každý měsíc Vám zašleme přehled všech prokliků na Vámi uvedenou emailovou adresu pro přehlednost.</p></span><hr/>  <br/>
+      {/if}
+
+        {/foreach}
+
+
+    {else}
+<center><h3>Uživatel nebo heslo nesouhlasí.</h3></center>
+
+<a href="{link Rozhrani:prihlaseni}">Zkusit se přihlásit znovu</a><br/><br/>
+<a href="{link Hledam:default}">Domů</a>
+
+
+    {/if}
+
+
+
+
+
+
+
+
+
+
+
+{/block}
+

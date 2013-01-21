@@ -1,0 +1,47 @@
+{block content}
+
+<head>
+    <style>
+
+.wrapper{ }
+</style>
+</head>
+
+    
+ <a  href="{link Rozhrani:menu} " style="float:right">| Úvod | </a> <a  href="{link Rozhrani:klient_detail} " style="float:right">| Správa účtu | </a><a  href="{link Rozhrani:klient_ucet} " style="float:right">| Správa kampaně | </a><a  href="{link Rozhrani:out} " style="float:right">| Odhlásit se | </a>
+
+    
+    <h1>Správa kampaně</h1> <hr/>
+  <span><p>Zobrazení produktů může být žádostí adminovi pozastaveno. Produkty z databáze nemažeme, pouze je skryjete návštěvníkům  ( nebudou na ně tedy klikat a nepřijdou na Vaše stránky)</p></span><hr/>  <br/>
+
+ <table id="one-column-emphasis" summary="Správa kampaně">
+  
+
+    	
+       
+    Celková suma přístupů :  {$kliky}
+         
+      
+      
+            
+   
+</table>
+  
+  {control klient_darkyGrid}
+  
+     
+
+
+
+
+
+
+    
+
+
+
+
+
+
+{/block}
+

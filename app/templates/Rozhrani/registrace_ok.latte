@@ -1,0 +1,57 @@
+{block content}
+
+<style>
+
+.wrapper{ height:978px; }
+ #footer { display:none; }
+         </style>
+
+  
+{if count($reg)}
+      
+   <h1>Registrace proběhla úspěšne</h1>
+ 
+       
+<hr/> <h2> Stav registrace Vám bude zdělen administrátorem serveru Vyhledávač-dárků.cz,  případné dotazy na mail podpora@Vyhledávač-dárků.cz
+
+a info@Vyhledávač-dárků.cz .Děkujeme</h2>
+
+   
+
+  <a href="{link Rozhrani:prihlaseni}">Přihlášení</a>
+          <a href="{link Hledam:default}">Domů</a>
+       
+
+
+
+
+
+
+ {else}
+    <center><h3>Přihlášení neproběhlo úspěšne.</h3></center>
+      
+         <a href="{link Rozhrani:prihlaseni}">Přihlášení</a>
+          <a href="{link Hledam:default}">Domů</a>
+         
+         
+    {/if}
+
+
+          
+          
+
+
+ 
+          
+                  
+          
+          
+    
+
+
+
+    {/block}
+
+
+
+

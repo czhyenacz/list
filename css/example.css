@@ -1,0 +1,39 @@
+
+
+.link{
+    background: url('../images2/link.png') no-repeat 4px #FFF;
+}
+
+.edit{
+    background: url('../images2/edit.png') no-repeat 4px;
+}
+
+.fast-edit{
+    background: url('../images2/fast_edit.png') no-repeat 4px;
+}
+
+.delete{
+    background: url('../images2/delete.png') no-repeat 4px;
+}
+
+.trash{
+    background: url('../images2/trash.png') no-repeat 4px;
+}
+
+.publish{
+    background: url('../images2/publish.png') no-repeat 4px;
+}
+
+
+.pridej{
+    background: url('../images2/publish.png') no-repeat 4px;
+    border-style:solid; position:absolute; top:300px; left:300px; z-index:100;
+}
+
+.unpublish{
+    background: url('../images2/unpublish.png') no-repeat 4px;
+}
+
+.restore{
+    background: url('../images2/restore.png') no-repeat 4px;
+}

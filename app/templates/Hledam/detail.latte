@@ -1,0 +1,143 @@
+{block content}
+
+
+<style>
+a { text-decoration: none; color:grey; }
+a:hover { text-decoration: none; color:#401649; }
+
+</style>
+
+
+
+
+ <a  href="{link Hledam:default} " > <img src="images/detail/zmenosobu2.png" style="z-index:40; position:absolute;top:-10px; right:0px;"  /></a>
+  <a  href="JavaScript:history.back()" > <img src="images/detail/zpetnavypis.png" style="z-index:40; position:absolute;top:-10px; "  /></a>
+ <br/> <br/> <br/>
+   <div id="bilyramlistdetail">  </div>
+    <div id="o_produktu">
+        <div id="nazev_produktu">Dárek - {$darky['nazev']|truncate:39}</div>
+     
+        <div class="obrazek_produktu_ram" ><img  class="obrazek_produktu" src="{$darky['obrazek_produktu']}"  onerror="this.src='../images/vypis/neni_obrazek.png'" alt="{$darky['nazev']}" /> </div> 
+
+        <br/>
+        <div id="popis_produktu" style=" width:500px; height:300px; overflow: auto;"> {!$darky['popis_produktu']|replace:"&lt;":"<"|replace:"&gt;":">"} (...)</div>
+<br/><hr/>
+<div style="z-index:40;">
+Vhodné jako: <br/>
+
+{if $darky['tag1']=='tata' or $darky['tag2']=='tata' or $darky['tag3']=='tata' or $darky['tag4']=='tata' or $darky['tag5']=='tata'}
+ <a  href="originální-dárek-pro-tátu ">  dárek pro tátu</a> <br/> {else}{/if}
+{if $darky['tag1']=='deda' or $darky['tag2']=='deda' or $darky['tag3']=='deda' or $darky['tag4']=='deda' or $darky['tag5']=='deda'}
+ <a  href="originální-dárek-pro-dědu "> dárek pro dědu</a> <br/>{else}{/if}
+{if $darky['tag1']=='mama' or $darky['tag2']=='mama' or $darky['tag3']=='mama' or $darky['tag4']=='mama' or $darky['tag5']=='mama'}
+ <a  href="originální-dárek-pro-mámu "> dárek pro mámu</a> <br/>{else}{/if}
+{if $darky['tag1']=='babicka' or $darky['tag2']=='babicka' or $darky['tag3']=='babicka' or $darky['tag4']=='babicka' or $darky['tag5']=='babicka'}
+ <a  href="originální-dárek-pro-babičku "> dárek pro babičku</a> <br/>{else}{/if}
+{if $darky['tag1']=='holka' or $darky['tag2']=='holka' or $darky['tag3']=='holka' or $darky['tag4']=='holka' or $darky['tag5']=='holka'}
+ <a  href="originální-dárek-pro-holku "> dárek pro holku</a> <br/>{else}{/if}
+{if $darky['tag1']=='kluk' or $darky['tag2']=='kluk' or $darky['tag3']=='kluk' or $darky['tag4']=='kluk' or $darky['tag5']=='kluk'}
+ <a  href="originální-dárek-pro-kluka "> dárek pro kluka</a> <br/>{else} {/if}
+{if $darky['tag1']=='muz' or $darky['tag2']=='muz' or $darky['tag3']=='muz' or $darky['tag4']=='muz' or $darky['tag5']=='muz'}
+ <a  href="originální-dárek-pro-muže "> dárek pro muže</a> <br/>{else}{/if}
+{if $darky['tag1']=='zena' or $darky['tag2']=='zena' or $darky['tag3']=='zena' or $darky['tag4']=='zena' or $darky['tag5']=='zena'}
+ <a  href="originální-dárek-pro-ženu "> dárek pro ženu </a><br/>{else}{/if}
+{if $darky['tag1']=='pritel' or $darky['tag2']=='pritel' or $darky['tag3']=='pritel' or $darky['tag4']=='pritel' or $darky['tag5']=='pritel'}
+ <a  href="originální-dárek-pro-přítele "> dárek pro přítele</a><br/>{else} {/if}
+{if $darky['tag1']=='pritelkyne' or $darky['tag2']=='pritelkyne' or $darky['tag3']=='pritelkyne' or $darky['tag4']=='pritelkyne' or $darky['tag5']=='pritelkyne'}
+ <a  href="originální-dárek-pro-přítelkyni "> dárek pro přítelkyni</a> <br/>{else}{/if}
+{if $darky['tag1']=='vsichni' or $darky['tag2']=='vsichni' or $darky['tag3']=='vsichni' or $darky['tag4']=='vsichni' or $darky['tag5']=='vsichni'}
+ <a  href="originální-dárek-pro-vsechny "> dárek vhodný pro kohokoliv</a> <br/>{else}{/if}
+
+ 
+ <div id="obliba" style="position:fixed; left:0px; top:320px; width:100px; z-index:100;">
+    <div style=" color:black; font-size:15px; z-index:100; width:100px;"><img src="images/detail/libi.png" style="width:100px; ">
+    <a href="{link hodnoceniplus! $darky['nazev'] }" style="position:fixed; left:0px; top:400px; z-index:101;  width:90px;height:90px;" onclick="return alert('Díky, že se ti dárek líbí');"></a>
+        <a href="{link hodnoceniminus! $darky['nazev'] }" style="position:fixed; left:0px; top:495px; z-index:101; width:90px;height:60px; " onclick="return alert('Díky za podnět!');"> </a>
+      </div>
+</div>
+ 
+    </div>
+
+
+    
+    <div id="prodejci" >
+        <span class="nasi_prodejci">Naši prodejci</span>    
+    <table class="tabulka_vyrobcu" cellpadding="15" >    
+ {foreach $darkys as $darki}
+
+            <tr > <td  ><a href="{$darki['jmeno_prodejce']}"  ><span class="jmeno_prodejce">{$darki['jmeno_prodejce']}</span></a></td>
+
+                <td ><div class="cena_darku">{$darki['cena'] } Kč</div> </td><td ><a n:href="Kliknuti $darki['adresa']"  ><img id="doobchodu" class="img-swap" src="images/detail/doobchodubutton_1.png"  border="0"></a></td></tr>
+      
+            
+     {/foreach}
+          </table>
+         {if count($darkys)>1} 
+<div style="background-color:white; z-index:1; height:60px; width:1030px; position:relative; left:-10px; top:-300px; ">
+  </div> {/if }
+    </div> 
+    
+   </div> 
+     </div> <br/>  <br/><br/> <br/><br/> <br/><br/><br/><br/> <br/><br/> <div id="pozadi_podobne"> 
+
+   
+    <span id="podobne_darky">  <img src="images/detail/podobnedarky.png"  id="podobne_darky" alt="podobnedarky" /></span>
+    <div   style="position:absolute;  z-index:1; height:400px; width:100%; top: 10px; margin:0 auto; text-align:center;left:0;  background: url(../images/detail/pozadipodobne.png) repeat-x left center;" /></div>
+    <div class="podobne_produkty_ram">
+           
+           <table> {if count($tripodobne)} 
+            <tr>
+
+     {foreach $tripodobne as $darky}
+                <td class="darky" style=" width:200px; 
+    height: 250px; ">
+             <a href="{link detail $darky['nazev_pekny']}"><h3>{$darky['nazev']}</h3>
+           <img  class="darky_img" style=" height: 130px;
+    
+   max-width: 120px; " src="{$darky['obrazek_produktu']}"  border="0"></a>
+          
+
+            </td> {/foreach}
+            </tr>
+        
+     {else }
+            
+        <tr>
+
+                <td class="darky" style=" width:200px; 
+    height: 250px; ">
+            <h3>nenalezen podobný dárek</h3>
+           <img  class="darky_img" style=" height: 130px;
+    
+   max-width: 120px; " src="" alt="nenalezen podobný dárek" border="0">
+          
+
+            </td>
+            </tr>     
+            
+            
+{/if }</table>
+ </div>  
+  
+   
+   </div> 
+
+
+
+
+
+
+          
+
+   
+ <div id="slideout">
+  <img src="images/feedback.png" alt="Feedback" />
+  <div id="slideout_inner">
+    
+<iframe src="http://www.najduse.php5.cz/okno" width="800" height="410" style="border-style: solid;  border-width: 0px;">
+</iframe>
+</div>
+  </div>
+<br/><br/><br/><br/>
+
+ {/block}

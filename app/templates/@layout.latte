@@ -1,0 +1,146 @@
+{**
+ * My Application layout template.
+ *
+ * @copyright  Copyright (c) 2012 Hynek Dařbujan aka czhyenacz
+ * @package    MyApplication
+ *
+ * @param string   $basePath web base path
+ * @param string   $robots   tell robots how to index the content of a page (optional)
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE html>
+<html>
+    <head>{block head}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Vyhledávač-dárků.cz - Dárky, které se hledají samy">
+        <meta name="robots" content="{$robots}" n:ifset="$robots">
+
+        <title>Tipy na dárky | Nejlepší český vyhledávač-dárků.cz</title>
+
+        <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css" type="text/css">
+        <link rel="stylesheet" media="print" href="{$basePath}/css/print.css" type="text/css">
+        <link rel="shortcut icon" href="{$basePath}/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
+    
+        <script type="text/javascript" src="{$basePath}/js/jquery.js"></script>
+
+      
+        <link href="{$basePath}/css/stranky.css" rel="stylesheet" type="text/css" media="all" />
+     
+
+	{/block}
+        
+        
+
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-36279324-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+
+<script type="text/javascript">
+
+
+
+jQuery(function(){
+     $(".img-swap").hover(
+     
+     
+      function(){ this.src = this.src.replace("_1","_2");  },
+          function(){ this.src = this.src.replace("_2","_1");}
+         
+      );
+});
+
+
+</script>
+
+
+<script type="text/javascript">
+
+
+
+jQuery(function(){
+     $(".img-swap").hover(
+          function(){ this.src = this.src.replace("_off","_on");},
+          function(){ this.src = this.src.replace("_on","_off");
+     });
+});
+
+
+</script>
+        
+    </head>
+
+    <body>
+       
+  <h1 style="font-size:0px;">Vyhledávač dárků</h1>
+
+<div id="header_poutac"> 
+       
+          <div  id="header" alt="hlavička" /></div>
+         <a href="{link Hledam:default}" id="logo"><img src="images/uvod/logo.png" alt="vyhledávač dárků" /></a>     <div id="pocet_darku"><span id="mame_darku">Máme </span><span id="cislo_poctu_darku">{$count_d}</span> <span id="mame_darku">ručně roztříděných dárků</span>   </div> </div> 
+         
+<div id="kontakt_tlacitka">
+                <a href="http://www.facebook.com/VyhledavacDarku" target="_blank" style="text-decoration: none" ><img src="images/uvod/f_off.png"  class="img-swap"   /> </a>    
+                  <a href="https://twitter.com/VyhledvacDarku" target="_blank"><img src="images/uvod/t_off.png" alt="odkaz twitter" class="img-swap"  /></a> 
+ <a href="{link Hledam:blog} " target="_blank"><img src="images/uvod/blog_off.png" alt="odkaz blog" class="img-swap"  /></a> 
+
+        
+      </div>   
+         
+          
+        <div class="wrapper">  
+            <div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+           
+
+         
+
+	{include #content}
+            
+       
+            
+          
+ </div>  
+<div class="clearfooter"></div>
+             <div id="footer"><div id="footer2" style="width:978px; padding:0px; margin:0 auto;">
+  
+    
+      <img src="images/uvod/logo.png"  style=" z-index:90; position:relative; left:-300px; top:-18px;"  />
+      <a  href="http://www.facebook.com/VyhledavacDarku " style=" z-index:90; " > <img src="images/facebook_smal.png"  style=" z-index:90; position:relative; left:-518px; top:-90px;"  /></a>
+          <a  href="https://twitter.com/VyhledvacDarku " style=" z-index:90; " >  <img src="images/twitter_smal.png"  style=" z-index:90; position:relative; left:-555px; top:-50px;"  /></a>
+  
+    
+    <div id="footer1" style=" z-index:90; position:relative; left:300px; top:-120px; text-align:left;">
+        <div style="position:absolute; ">
+     
+        <big style="margin-bottom:10px; font-weight:bold;">Více</big ><br/>
+    <a  href="{link Rozhrani:o_nas} " style=" z-index:90;  ">O nás</a><br/>
+    <a  href="{link Rozhrani:faq} " style=" z-index:90;  " >Nejčastější otázky</a><br/>
+    <a  href="{link Rozhrani:osobni_udaje} " style=" z-index:90; " >Ochrana osobních údajů</a>
+     </div> </div>  
+     <div id="footer2" style=" z-index:90; position:relative; left:700px; top:-120px; text-align:left;">
+  <div style="position:absolute; ">  <big style="margin-bottom:10px; font-weight:bold;">Spolupráce</big><br/>
+         <a  href="{link Rozhrani:prihlaseni} " style=" z-index:90; " >Přidat e-shop</a><br/>
+        <a  href="{link Rozhrani:podminky} " style=" z-index:90; " >Smluvní podmínky</a><br/>
+         <a  href="{link Rozhrani:kontakt} " style=" z-index:90;  " >Kontakt</a><br/>
+</div>
+   </div>
+        
+         <big style=" font-weight:bold; position:relative; top:-10px; left:50px; z-index:90; ">S vyhledávačem dárků najdeš svůj dárek</big>
+        <a  href="www.vyhledavac-darku.cz/wordpress" style=" z-index:90; top:-50px; " ><blog style=" font-weight:bold; position:relative; top:-50px; left:-490px; z-index:90; ">Blog</blog></a> 
+        
+            </div> </div> 
+    </body>
+</html>
