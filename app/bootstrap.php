@@ -32,48 +32,15 @@ $configurator->addConfig(__DIR__ . '/config/config.neon');
 $container = $configurator->createContainer();
 
 // Setup router
-$container->router[] = new Route('index.php', 'Hledam:default', Route::ONE_WAY);
+$container->router[] = new Route('index.php', 'Listek:login', Route::ONE_WAY);
 
-$container->router[] = new Route('kontakt', 'Rozhrani:kontakt');
-$container->router[] = new Route('podminky', 'Rozhrani:podminky');
-//$container->router[] = new Route('vybraný-dárek-je-[<nazev>]', 'Hledam:detail');
-$container->router[] = new Route('vybrany-darek-je-[<nazev_pekny>]', 'Hledam:detail');
-$container->router[] = new Route('prihlaseni', 'Rozhrani:prihlaseni');
-$container->router[] = new Route('originální-dárek-pro-[<hledany_vyraz>]', 'Hledam:vypis');
-$container->router[] = new Route('originální-dárek-pro-[<hledany_vyraz>]', 'Hledam:vypis_vyhl');
-$container->router[] = new Route('hledám-dárek-pro-[<hledany_vyraz>]', 'Hledam:vypis_vyhl');
-$container->router[] = new Route('hledám-dárek-pro-[<hledany_vyraz>]', 'Hledam:vypis');
-$container->router[] = new Route('emailhavr', 'Hledam:emailhavr');
-$container->router[] = new Route('okno', 'Hledam:okno');
 
-$container->router[] = new Route('vypis_vyhl', 'Hledam:vypis_vyhl');
-$container->router[] = new Route('po', 'Hledam:po');
-$container->router[] = new Route('menu', 'Rozhrani:menu');
-$container->router[] = new Route('Po2', 'Hledam:po2');
-
-$container->router[] = new Route('odhlaseni', 'Rozhrani:out');
-$container->router[] = new Route('test', 'Rozhrani:test');
-
-$container->router[] = new Route('detail_1', 'Hledam:detail_1');
-$container->router[] = new Route('O nás', 'Rozhrani:o_nas');
-$container->router[] = new Route('faq','Rozhrani:faq');
-$container->router[] = new Route('osobní údaje', 'Rozhrani:osobni_udaje');
-$container->router[] = new Route('klient', 'Rozhrani:pokus');
-$container->router[] = new Route('sprava_uctu', 'Rozhrani:klient_detail');
-$container->router[] = new Route('sprava_kampane', 'Rozhrani:klient_ucet');
-$container->router[] = new Route('<presenter>-[<action>]-pro-[<hledany_vyraz>]', 'Hledam:default');
-$container->router[] = new Route('klient-registrace', 'Rozhrani:klient_registrace');
-$container->router[] = new Route('klient-prihlaseni', 'Rozhrani:prihlaseni');
-$container->router[] = new Route('klient-update', 'Rozhrani:klient_update');
-$container->router[] = new Route('klient-update-form', 'Rozhrani:klient_update_form');
-$container->router[] = new Route('klient-update-form', 'Rozhrani:klient_update_form');
-$container->router[] = new Route('master_1', 'Rozhrani:master_1');
-
-$container->router[] = new Route('master_spravauctu', 'Rozhrani:master_spravauctu');
-$container->router[] = new Route('master_urlchecker', 'Rozhrani:master_urlchecker');
-$container->router[] = new Route('master_aktualizacefeedu', 'Rozhrani:master_aktualizacefeedu');
-$container->router[] = new Route('klient_detailproadmina', 'Rozhrani:klient_detailproadmina');
-$container->router[] = new Route('klient_ucetproadmina', 'Rozhrani:klient_ucetproadmina');
+$container->router[] = new Route('listek', 'Listek:cisnik_listek');
+$container->router[] = new Route('stoly', 'Listek:cisnik_stoly');
+$container->router[] = new Route('platba', 'Listek:cisnik_platba');
+$container->router[] = new Route('objednavka', 'Listek:objednavka');
+$container->router[] = new Route('kuchyn_historie', 'Listek:kuchyn_historie');
+$container->router[] = new Route('objednavka', 'Listek:kuchyn_objednavka');
 $session = $container->getService('session');
 
 
