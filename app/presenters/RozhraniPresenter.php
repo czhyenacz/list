@@ -558,7 +558,9 @@ if($file_headers[0] == ('HTTP/1.1 404 Not Found') or $file_headers[0] == ('HTTP/
                 ->setRequired('Od koho je feed?');
       $form->addTextArea('xmlsoubor', 'Nahraj xml soubor - bez G: PLATÍ PRO GOOGLE !!:')
                 ->setRequired('A nahrávat jako nebudeme?');
-      
+
+      $form->addText('affiliate', 'Jeho affiliate')
+                ->setRequired('A nahrávat jako nebudeme?');
       
       
         $form->addSubmit('send', 'Odeslat xmlsoubor');
@@ -573,7 +575,7 @@ if($file_headers[0] == ('HTTP/1.1 404 Not Found') or $file_headers[0] == ('HTTP/
         $values = $form->getValues(TRUE); // získávání hodnot ze změny stránek
        
       $xmlsoubor = $values['xmlsoubor'];
-     
+     $aff=$values['affiliate'];
         $typ = $values['typ'];
        
            
@@ -614,7 +616,7 @@ $xml = new SimpleXMLIterator($xmlsoubor);
                 
                 'cena' => $cena,
                 'popis_produktu' => $popis_produktu,
-                'adresa' => $adresa,
+                'adresa' => $adresa.$aff,
                 'obrazek_produktu' => $obrazek_produktu,
               
                
@@ -652,13 +654,13 @@ foreach ($xml->SHOPITEM as $zam) {
           // $popis_produktu=Strings::replace($popis_produktu,'&lt;', '<');
     // $popis_produktu=Strings::replace($popis_produktu,'&gt;', '>');
             // vlozeni dat do databaze
-         
+          
             $arr = array(
                
             
                 'cena' => $cena,
                 'popis_produktu' => $popis_produktu,
-                'adresa' => $adresa,
+                'adresa' => $adresa.$aff,
                 'obrazek_produktu' => $obrazek_produktu,
                
               
@@ -702,7 +704,7 @@ foreach ($xml->SHOPITEM as $zam) {
            
                 'cena' => $cena,
                 'popis_produktu' => $popis_produktu,
-                'adresa' => $adresa,
+                'adresa' => $adresa.$aff,
                 'obrazek_produktu' => $obrazek_produktu,
                 
             );
@@ -719,7 +721,46 @@ foreach ($xml->SHOPITEM as $zam) {
       
     }
     
-    
+     public function createComponentAffiliateForm() {
+        $form = new Form(); 
+        
+       
+     
+      $form->addText('jmeno_prodejce', 'Jmeno prodejce jako je v dtbs')
+                ->setRequired('A nahrávat jako nebudeme?');
+      $form->addText('affiliate', 'Jeho affiliate')
+                ->setRequired('A nahrávat jako nebudeme?');
+      
+      
+        $form->addSubmit('send', 'aktualizovat affily');
+
+        $form->onSuccess[] = callback($this, 'AffiliateFormSubmitted');
+        return $form;
+      
+    }
+
+    public function AffiliateFormSubmitted(Form $form) {
+         $this->setView('master_aktualizacefeedu_1'); // výpis a zpracování xml souboru
+        $values = $form->getValues(TRUE); // získávání hodnot ze změny stránek
+       
+      $affiliate = $values['affiliate'];
+     
+        $jmeno_prodejce = $values['jmeno_prodejce'];
+  
+            // vlozeni dat do databaze
+           
+            dibi::query('UPDATE [darky] SET [adresa]=CONCAT([adresa],%s) WHERE [jmeno_prodejce]=%s ',$affiliate,$jmeno_prodejce);
+            
+            
+            
+ 
+
+
+ 
+
+  $this->flashMessage('??? ');
+      
+    }
     
     
     

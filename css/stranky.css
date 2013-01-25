@@ -21,7 +21,7 @@ margin-bottom:-190px;
 .wrapper_vypis {   position: relative; top:100px;left:75px }
 
 .clearfooter {
-height: 20px;
+height: 5px;
 clear: both;
 
 }
@@ -323,7 +323,7 @@ text-shadow: 0px -1px 1px white;
   
     position: relative; 
         top: -138px; 
-            left: -350px; 
+            left: -430px; 
  z-index:35;
 }
 

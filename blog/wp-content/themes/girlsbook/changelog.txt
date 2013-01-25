@@ -1,7 +1,0 @@
-Template Version 1.0
-
-
-
-SMT Framework Version 1.0.2
-06/20/2012 v 1.0.2
-Added Flickr widget and Video widget
