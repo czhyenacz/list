@@ -165,38 +165,7 @@ class HledamModel {
              }  
              
              
-               public static function fetchVysledekztagcount($tag) {
-       return dibi::fetchAll('
-            SELECT *
-            FROM [darky]  WHERE  (%or) AND (%and) GROUP BY [nazev]  '
-       
-               ,  array(
-     array('tag1 = %s', $tag),
-     array('tag2 = %s', $tag),
-     array('tag3 = %s', $tag),
-     array('tag4 = %s', $tag),
-     array('tag5 = %s', $tag),
-     array('tag1 = "vsichni"'),
-     array('tag2 = "vsichni"'),
-     array('tag3 = "vsichni"'),
-     array('tag4 = "vsichni"'),  
-     array('tag5 = "vsichni"'),
-    )
-               ,  array(
-     array('[status]<>"stop"'),
-    array('[skupina]<>"nic"'),
-     array('[skupina]<>"nechci"'), 
-            
-    )
                
-               
-               
-                 
-                                             
-               );
-             }  
-             
-             
              /*
              
            // pojď , Ty zběsilá ovce ) - verca
