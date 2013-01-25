@@ -1,0 +1,29 @@
+
+
+
+{if count($hodnot)}
+
+
+  
+
+      {foreach $hodnot as $hodnotyi}
+      {if $hodnotyi['role']=="cisnik"}
+
+        {/if}
+
+      {if $hodnotyi['role']=="kuchar"}
+// kuchar muze videt jak jsou obsazeny stoly
+        {/if}
+
+
+
+        {/foreach}
+
+
+{else}
+<center><h3>Uživatel nebo heslo nesouhlasí- zapni si kookiny, nebo se znovu přihlaš.</h3></center>
+      {/if}
+
+
+
+// vidi objednane jidlo 

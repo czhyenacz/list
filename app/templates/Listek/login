@@ -1,0 +1,8 @@
+
+<h1 align="left"> Přihlásit se</h1>
+<hr/>
+{control rozhraniForm}
+
+<hr/>
+<br/>
+<a href="{link Rozhrani:registrace}" ><h2 align="left"> Nová registrace </h2></a>
